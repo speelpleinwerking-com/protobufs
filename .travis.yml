@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- stable
+- '6'
+deploy:
+  provider: npm
+  email: thomas@toye.io
+  api_key:
+    secure: FJ/vMVX2u5CIqXE3rfLaWwq5MCZgEfQC/NjO7e10f1jJsNahD5FfeYK9jRZHJSOBaeMIQp+KV00lildCA5Ro/oGvn/0DJc3evQYj13rNq2aG+4Ij38M6Q2tbOBqZEzfVX/4Im+8M8A8E+mSSE3P6kZPgw+qbFcAXGX67Ouhs8Y3x7PVml/t2aaiMsUASWdsG26UyL3pWgTi1PK4dwi2ovXV5Ed3jxQs7fUyynJiymSyv4ODN0qsRMvF4Rk9Tl0/pXgATfrLD+n7cciTQU1f5oEPgZ9zwMiYHVn1gnzyxnNmZHl0I8KKo/fMnnJvTulmdrl9BhijXvPVjPEG8Q3Dy4RtxRlEqeBaAwjHP6mq3VijkHjybsjY+i88w6CMnWts1jOVrYbowylgR2VExSYJbsRHABY4DJsxAV2bMOLGbLToyyRIQ6muvTisFnA3z+uzLqyGnoTz3vIrN+XI6ED01uVczHrP3z7klhx6N4ETHXL6VbZfl3x3GhyIryWsXfbckBxyaWnBz+yguhcfk+nu21xqw65QluyUbwBiUiQtu4+JirwjkWoBrFG0etRTQJt+1NPGOpnNsDF7nnBA42XtUWO/2K9HBY5OVeO0UWc0Z/FeztRBo0Obd0EWhBx2Jmlxq/aiL2EjZHxHOYK6pjaq9wPMDgDtql1HRRXg0n/52GzY=
+  on:
+    tags: true
+    repo: speelpleinwerking-com/protobufs
