@@ -10,3 +10,9 @@ To build the package (this will compile the .proto files to a .js and a .d.ts fi
 npm run build
 ```
 
+The tests are very simple. They only do a simple sanity check. To run the tests:
+
+```
+npm test
+```
+

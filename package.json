@@ -7,9 +7,11 @@
   "dependencies": {
     "protobufjs": "^6.8.8"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "^6.1.4"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "build": "rm -rf dist; mkdir dist; pbjs -t static-module -w commonjs -o dist/index.js proto/*.proto; pbts -o dist/index.d.ts dist/index.js"
   },
   "repository": {
