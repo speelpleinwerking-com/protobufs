@@ -16,3 +16,7 @@ The tests are very simple. They only do a simple sanity check. To run the tests:
 npm test
 ```
 
+## Docs
+
+Latest built from `master` are available [here](https://speelpleinwerking-com.github.io/protobufs/).
+
