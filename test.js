@@ -3,14 +3,30 @@ const assert = require('assert');
 
 describe('protobuf verification', function() {
   describe('Playground#verify', function() {
-    it('should be null on verifying correct object', () => {
-      assert.equal(protobufs.Playground.verify({ name: 'Test', canonicalName: 'test', zipCode: 444 }), null);
+    it('should report missing attributes', () => {
+      assert.equal(protobufs.Playground.verify({}), 'details.object expected');
     });
 
     it('should report missing attributes', () => {
-      assert.equal(protobufs.Playground.verify({ name: 'Test', canonicalName: 'test' }),'zipCode: integer expected');
+      assert.equal(protobufs.Playground.verify({
+        details: {
+          canonicalName: 'test',
+          name: 'Test',
+          zipCode: 8888
+        },
+        generalInformation: {
+          pricing: {}
+        },
+        calendar: {},
+        accessibility: {},
+        location: [
+          { description: '' }
+        ],
+        organisationalFoundation: {},
+        crew: {},
+        media: {},
+        contact: {}
+      }), null);
     });
   });
 });
-
-
