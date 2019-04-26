@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Protocol Documentation</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic"/>
+    <style>
+      body {
+        width: 60em;
+        margin: 1em auto;
+        color: #222;
+        font-family: "Ubuntu", sans-serif;
+        padding-bottom: 4em;
+      }
+
+      h1 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa;
+        padding-bottom: 0.5ex;
+      }
+
+      h2 {
+        border-bottom: 1px solid #aaa;
+        padding-bottom: 0.5ex;
+        margin: 1.5em 0;
+      }
+
+      h3 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa;
+        padding-bottom: 0.5ex;
+      }
+
+      a {
+        text-decoration: none;
+        color: #567e25;
+      }
+
+      table {
+        width: 100%;
+        font-size: 80%;
+        border-collapse: collapse;
+      }
+
+      thead {
+        font-weight: 700;
+        background-color: #dcdcdc;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #fbfbfb;
+      }
+
+      td {
+        border: 1px solid #ccc;
+        padding: 0.5ex 2ex;
+      }
+
+      td p {
+        text-indent: 1em;
+        margin: 0;
+      }
+
+      td p:nth-child(1) {
+        text-indent: 0;  
+      }
+
+       
+      .field-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(3) {  
+        width: 6em;
+      }
+      .field-table td:nth-child(4) {  
+        width: auto;
+      }
+
+       
+      .extension-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(3) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(4) {  
+        width: 5em;
+      }
+      .extension-table td:nth-child(5) {  
+        width: auto;
+      }
+
+       
+      .enum-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(3) {  
+        width: auto;
+      }
+
+       
+      .scalar-value-types-table tr {
+        height: 3em;
+      }
+
+       
+      #toc-container ul {
+        list-style-type: none;
+        padding-left: 1em;
+        line-height: 180%;
+        margin: 0;
+      }
+      #toc > li > a {
+        font-weight: bold;
+      }
+
+       
+      .file-heading {
+        width: 100%;
+        display: table;
+        border-bottom: 1px solid #aaa;
+        margin: 4em 0 1.5em 0;
+      }
+      .file-heading h2 {
+        border: none;
+        display: table-cell;
+      }
+      .file-heading a {
+        text-align: right;
+        display: table-cell;
+      }
+
+       
+      .badge {
+        width: 1.6em;
+        height: 1.6em;
+        display: inline-block;
+
+        line-height: 1.6em;
+        text-align: center;
+        font-weight: bold;
+        font-size: 60%;
+
+        color: #89ba48;
+        background-color: #dff0c8;
+
+        margin: 0.5ex 1em 0.5ex -1em;
+        border: 1px solid #fbfbfb;
+        border-radius: 1ex;
+      }
+    </style>
+
+    
+    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+  </head>
+
+  <body>
+
+    <h1 id="title">Protocol Documentation</h1>
+
+    <h2>Table of Contents</h2>
+
+    <div id="toc-container">
+      <ul id="toc">
+        
+          
+          <li>
+            <a href="#accessibility.proto">accessibility.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#.Accessibility"><span class="badge">M</span>Accessibility</a>
+                </li>
+              
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#calendar.proto">calendar.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#.Calendar"><span class="badge">M</span>Calendar</a>
+                </li>
+              
+                <li>
+                  <a href="#.Calendar.ClosedOnEntry"><span class="badge">M</span>Calendar.ClosedOnEntry</a>
+                </li>
+              
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#contact.proto">contact.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#.Contact"><span class="badge">M</span>Contact</a>
+                </li>
+              
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#crew.proto">crew.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#.Crew"><span class="badge">M</span>Crew</a>
+                </li>
+              
+                <li>
+                  <a href="#.CrewMember"><span class="badge">M</span>CrewMember</a>
+                </li>
+              
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#general-information.proto">general-information.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#.GeneralInformation"><span class="badge">M</span>GeneralInformation</a>
+                </li>
+              
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#location-information.proto">location-information.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#.GoogleMapsParameters"><span class="badge">M</span>GoogleMapsParameters</a>
+                </li>
+              
+                <li>
+                  <a href="#.Location"><span class="badge">M</span>Location</a>
+                </li>
+              
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#media.proto">media.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#.Media"><span class="badge">M</span>Media</a>
+                </li>
+              
+                <li>
+                  <a href="#.Picture"><span class="badge">M</span>Picture</a>
+                </li>
+              
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#playground.proto">playground.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#.Playground"><span class="badge">M</span>Playground</a>
+                </li>
+              
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#pricing.proto">pricing.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#.Pricing"><span class="badge">M</span>Pricing</a>
+                </li>
+              
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#serious.proto">serious.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#.Serious"><span class="badge">M</span>Serious</a>
+                </li>
+              
+              
+              
+              
+            </ul>
+          </li>
+        
+        <li><a href="#scalar-value-types">Scalar Value Types</a></li>
+      </ul>
+    </div>
+
+    
+      
+      <div class="file-heading">
+        <h2 id="accessibility.proto">accessibility.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id=".Accessibility">Accessibility</h3>
+        <p>Information about accessibility, inclusion and disabilities</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>who_welcome</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Are children with disabilities welcome or not, things you need to know, ... </p></td>
+                </tr>
+              
+                <tr>
+                  <td>organisations_we_work_with</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Organisations that the playground partnered with or works together with </p></td>
+                </tr>
+              
+                <tr>
+                  <td>who_to_contact</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Details of who can be contacted with questions about accessibility or inclusion </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
+        <h2 id="calendar.proto">calendar.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id=".Calendar">Calendar</h3>
+        <p>Details on upcoming events, programme, etc.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>closed_on</td>
+                  <td><a href="#Calendar.ClosedOnEntry">Calendar.ClosedOnEntry</a></td>
+                  <td>repeated</td>
+                  <td><p>Days on which the playground is closed. Key: ISO 8061 date (e.g. &#34;2022-04-26&#34;), value: reason (e.g. &#34;National holiday&#34;) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>programme</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Programme for the upcoming holiday(s), detailing themes, special activities, ... </p></td>
+                </tr>
+              
+                <tr>
+                  <td>next_year_dates</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Dates, holidays and periods the playground will be open next year </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id=".Calendar.ClosedOnEntry">Calendar.ClosedOnEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
+        <h2 id="contact.proto">contact.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id=".Contact">Contact</h3>
+        <p>Contact information for a playground</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>postal_address</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Postal address people would use if they wanted to send letters or documents
+Not necessarily the location of the playground </p></td>
+                </tr>
+              
+                <tr>
+                  <td>email</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Email address of the playground </p></td>
+                </tr>
+              
+                <tr>
+                  <td>phone_number</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Phone number of the playground </p></td>
+                </tr>
+              
+                <tr>
+                  <td>facebook_url</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>URL of the Facebook page of this playground </p></td>
+                </tr>
+              
+                <tr>
+                  <td>instagram_handle</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Instagram handle of the Instagram account of this playground, without leading &#39;@&#39; </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
+        <h2 id="crew.proto">crew.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id=".Crew">Crew</h3>
+        <p>Information on crew and crew members of a playground</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>members</td>
+                  <td><a href="#CrewMember">CrewMember</a></td>
+                  <td>repeated</td>
+                  <td><p>Crew members of a playground </p></td>
+                </tr>
+              
+                <tr>
+                  <td>for_prospective_volunteers</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Information for prospective volunteers. What is a “speelpleinwerking”? Why would I join one? Who can I contact?
+How old do I need to be? Do I need a certificate of any kind? </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id=".CrewMember">CrewMember</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td>required</td>
+                  <td><p>The full name of this crew member </p></td>
+                </tr>
+              
+                <tr>
+                  <td>description</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Extra information on this crew member, such as duties, ... </p></td>
+                </tr>
+              
+                <tr>
+                  <td>photo_url</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Photo of this crew member </p></td>
+                </tr>
+              
+                <tr>
+                  <td>email_address</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Email address of this crew member
+Warning: public. This is meant for contact people of the playground </p></td>
+                </tr>
+              
+                <tr>
+                  <td>phone_number</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Phone number of this crew member
+Warning: public. This is meant for contact people of the playground </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
+        <h2 id="general-information.proto">general-information.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id=".GeneralInformation">GeneralInformation</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>pricing</td>
+                  <td><a href="#Pricing">Pricing</a></td>
+                  <td>required</td>
+                  <td><p>Pricing information </p></td>
+                </tr>
+              
+                <tr>
+                  <td>age_groups</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Are there age groups? If yes, why, how are they divided, is it possible to skip ahead so my child can be with her friends? </p></td>
+                </tr>
+              
+                <tr>
+                  <td>age_limits</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Is there a minimum age, maximum age? Any other organisations you can suggests for older children? </p></td>
+                </tr>
+              
+                <tr>
+                  <td>teenagers</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Is there a separate group for teenagers? What&#39;s the vision on teenagers on the playground? </p></td>
+                </tr>
+              
+                <tr>
+                  <td>open_or_closed</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Is there an &#34;open aanbod&#34; or &#34;gesloten aanbod&#34;? How does it work? </p></td>
+                </tr>
+              
+                <tr>
+                  <td>limit</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Is there a limit on the number of children? If yes, where can I see how many places are left? </p></td>
+                </tr>
+              
+                <tr>
+                  <td>first_time</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Do I have to register my children beforehand? Is there anything special about the first time my children come? </p></td>
+                </tr>
+              
+                <tr>
+                  <td>timetable</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>What a typical day looks like </p></td>
+                </tr>
+              
+                <tr>
+                  <td>organized_by</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>If the playground is organised by the city or a private organisation </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
+        <h2 id="location-information.proto">location-information.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id=".GoogleMapsParameters">GoogleMapsParameters</h3>
+        <p>Parameters to show a Google Maps representation of an address</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>lat</td>
+                  <td><a href="#double">double</a></td>
+                  <td>required</td>
+                  <td><p>Latitude of the location </p></td>
+                </tr>
+              
+                <tr>
+                  <td>lon</td>
+                  <td><a href="#double">double</a></td>
+                  <td>required</td>
+                  <td><p>Longitude of the location </p></td>
+                </tr>
+              
+                <tr>
+                  <td>zoom</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>required</td>
+                  <td><p>Zoom level for Google Maps </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id=".Location">Location</h3>
+        <p>Playground location. One playground may have multiple locations if they switch locations.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>description</td>
+                  <td><a href="#string">string</a></td>
+                  <td>required</td>
+                  <td><p>Description of this address, e.g. &#34;Our main location provides...&#34; </p></td>
+                </tr>
+              
+                <tr>
+                  <td>street_and_number</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>zip_code</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td>optional</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>city</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>google_maps_parameters</td>
+                  <td><a href="#GoogleMapsParameters">GoogleMapsParameters</a></td>
+                  <td>optional</td>
+                  <td><p>Parameters for a Google Maps representation of this address </p></td>
+                </tr>
+              
+                <tr>
+                  <td>entrance_image_url</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>URL of an image showing the entrance of this playground </p></td>
+                </tr>
+              
+                <tr>
+                  <td>floor_plan</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>URL of an image showing the floor plan/map of this location </p></td>
+                </tr>
+              
+                <tr>
+                  <td>how_to_reach</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Is there (free) (street) parking? Bicycle parking? Public transport? How to find the entrance? </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
+        <h2 id="media.proto">media.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id=".Media">Media</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>where_to_find_pictures</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Where to find pictures as a parent </p></td>
+                </tr>
+              
+                <tr>
+                  <td>pictures</td>
+                  <td><a href="#Picture">Picture</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id=".Picture">Picture</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>url</td>
+                  <td><a href="#string">string</a></td>
+                  <td>required</td>
+                  <td><p>Direct URL of the picture </p></td>
+                </tr>
+              
+                <tr>
+                  <td>caption</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Caption of the picture </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
+        <h2 id="playground.proto">playground.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id=".Playground">Playground</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>canonical_name</td>
+                  <td><a href="#string">string</a></td>
+                  <td>required</td>
+                  <td><p>Canonical name of the playground - name with only lowercase and &#39;-&#39; characters </p></td>
+                </tr>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td>required</td>
+                  <td><p>Full name of the playground </p></td>
+                </tr>
+              
+                <tr>
+                  <td>zip_code</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td>required</td>
+                  <td><p>Postal code of the city the playground is in </p></td>
+                </tr>
+              
+                <tr>
+                  <td>logo_url</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Url of the logo of the playground (preferably svg or png) </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
+        <h2 id="pricing.proto">pricing.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id=".Pricing">Pricing</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>price_per_day</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Information on how much you need to per per day </p></td>
+                </tr>
+              
+                <tr>
+                  <td>extra_costs</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Information on extra costs, such as &#34;You need to pay 5 euro the first time you come&#34; </p></td>
+                </tr>
+              
+                <tr>
+                  <td>possible_discounts</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Possible discounts, such as &#34;50% of for the second child&#34; </p></td>
+                </tr>
+              
+                <tr>
+                  <td>help_with_paying_information</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Where can parents find information when they have difficulty paying? E.g. &#34;Sociaal huis&#34; </p></td>
+                </tr>
+              
+                <tr>
+                  <td>how_to_request_fiscal_certificate</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Information on how parents can request a fiscal certificate </p></td>
+                </tr>
+              
+                <tr>
+                  <td>how_to_request_health_insurance_certificate</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Information on how parents can request a health insurance certificate </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
+        <h2 id="serious.proto">serious.proto</h2><a href="#title">Top</a>
+      </div>
+      <p></p>
+
+      
+        <h3 id=".Serious">Serious</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>mission_vision_text</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>The vision and mission of the playground (as text) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>mission_vision_url</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>The vision and mission of the playground - link to a document (e.g. PDF) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>legal_information</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Legal information of the playground, such as company number, registered office, ... </p></td>
+                </tr>
+              
+                <tr>
+                  <td>insurance_information</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Insurance information: what insurance does the playground have, what to do in case of damage </p></td>
+                </tr>
+              
+                <tr>
+                  <td>rules_text</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>The rules of the playground (as text) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>rules_url</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>The rules of the playground - link to a document (e.g. PDF) </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+    
+
+    <h2 id="scalar-value-types">Scalar Value Types</h2>
+    <table class="scalar-value-types-table">
+      <thead>
+        <tr><td>.proto Type</td><td>Notes</td><td>C++ Type</td><td>Java Type</td><td>Python Type</td></tr>
+      </thead>
+      <tbody>
+        
+          <tr id="double">
+            <td>double</td>
+            <td></td>
+            <td>double</td>
+            <td>double</td>
+            <td>float</td>
+          </tr>
+        
+          <tr id="float">
+            <td>float</td>
+            <td></td>
+            <td>float</td>
+            <td>float</td>
+            <td>float</td>
+          </tr>
+        
+          <tr id="int32">
+            <td>int32</td>
+            <td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead.</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>int</td>
+          </tr>
+        
+          <tr id="int64">
+            <td>int64</td>
+            <td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead.</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>int/long</td>
+          </tr>
+        
+          <tr id="uint32">
+            <td>uint32</td>
+            <td>Uses variable-length encoding.</td>
+            <td>uint32</td>
+            <td>int</td>
+            <td>int/long</td>
+          </tr>
+        
+          <tr id="uint64">
+            <td>uint64</td>
+            <td>Uses variable-length encoding.</td>
+            <td>uint64</td>
+            <td>long</td>
+            <td>int/long</td>
+          </tr>
+        
+          <tr id="sint32">
+            <td>sint32</td>
+            <td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s.</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>int</td>
+          </tr>
+        
+          <tr id="sint64">
+            <td>sint64</td>
+            <td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s.</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>int/long</td>
+          </tr>
+        
+          <tr id="fixed32">
+            <td>fixed32</td>
+            <td>Always four bytes. More efficient than uint32 if values are often greater than 2^28.</td>
+            <td>uint32</td>
+            <td>int</td>
+            <td>int</td>
+          </tr>
+        
+          <tr id="fixed64">
+            <td>fixed64</td>
+            <td>Always eight bytes. More efficient than uint64 if values are often greater than 2^56.</td>
+            <td>uint64</td>
+            <td>long</td>
+            <td>int/long</td>
+          </tr>
+        
+          <tr id="sfixed32">
+            <td>sfixed32</td>
+            <td>Always four bytes.</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>int</td>
+          </tr>
+        
+          <tr id="sfixed64">
+            <td>sfixed64</td>
+            <td>Always eight bytes.</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>int/long</td>
+          </tr>
+        
+          <tr id="bool">
+            <td>bool</td>
+            <td></td>
+            <td>bool</td>
+            <td>boolean</td>
+            <td>boolean</td>
+          </tr>
+        
+          <tr id="string">
+            <td>string</td>
+            <td>A string must always contain UTF-8 encoded or 7-bit ASCII text.</td>
+            <td>string</td>
+            <td>String</td>
+            <td>str/unicode</td>
+          </tr>
+        
+          <tr id="bytes">
+            <td>bytes</td>
+            <td>May contain any arbitrary sequence of bytes.</td>
+            <td>string</td>
+            <td>ByteString</td>
+            <td>str</td>
+          </tr>
+        
+      </tbody>
+    </table>
+  </body>
+</html>
+
