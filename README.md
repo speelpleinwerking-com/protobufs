@@ -2,6 +2,34 @@
 
 These protocol buffers define the data structures for speelpleinwerking.com. They are compiled to JS and TS with protobuf.js.
 
+## Usage
+
+```
+npm install @speelpleinwerking.com/protobufs
+```
+
+### TypeScript
+
+```
+import { Playground } from '@speelpleinwerking.com/protobufs';
+
+Playground.verify({}); // 'canonicalName: string expected'
+...
+```
+
+See [here](https://github.com/protobufjs/protobuf.js#toolset) for available methods on the types.
+
+### JavaScript
+
+```
+const models = require('@speelpleinwerking.com/protobufs')
+
+models.Playground.verify({}) // 'canonicalName: string expected'
+...
+```
+
+See [here](https://github.com/protobufjs/protobuf.js#toolset) for available methods on the types.
+
 ## Development
 
 To build the package (this will compile the .proto files to a .js and a .d.ts file):
