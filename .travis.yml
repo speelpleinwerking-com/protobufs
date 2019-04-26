@@ -18,6 +18,9 @@ script:
   - npm run build
   - npm test
 
+after_success:
+  - docker run --rm  -v $(pwd)/doc:/out -v $(pwd)/proto:/protos pseudomuto/protoc-gen-doc
+
 deploy:
   - provider: npm
     email: thomas@toye.io
