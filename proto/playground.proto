@@ -1,15 +1,23 @@
 syntax = "proto2";
 
+import "general-information.proto";
+import "calendar.proto";
+import "accessibility.proto";
+import "location-information.proto";
+import "organisational-foundation.proto";
+import "crew.proto";
+import "media.proto";
+import "contact.proto";
+import "playground-details.proto";
+
 message Playground {
-    // Canonical name of the playground - name with only lowercase and '-' characters
-    required string canonical_name = 1;
-
-    // Full name of the playground
-    required string name = 2;
-
-    // Postal code of the city the playground is in
-    required uint32 zip_code = 3;
-
-    // Url of the logo of the playground (preferably svg or png)
-    optional string logo_url = 4;
+    required PlaygroundDetails details = 1;
+    required GeneralInformation general_information = 2;
+    required Calendar calendar = 3;
+    required Accessibility accessibility = 4;
+    required Location location = 5;
+    required OrganisationalFoundation organisational_foundation = 6;
+    required Crew crew = 7;
+    required Media media = 8;
+    required Contact contact = 9;
 }

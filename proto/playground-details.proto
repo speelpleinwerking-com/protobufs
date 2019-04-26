@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+message PlaygroundDetails {
+    // Canonical name of the playground - name with only lowercase and '-' characters
+    required string canonical_name = 1;
+
+    // Full name of the playground
+    required string name = 2;
+
+    // Postal code of the city the playground is in
+    required uint32 zip_code = 3;
+
+    // Url of the logo of the playground (preferably svg or png)
+    optional string logo_url = 4;
+}
