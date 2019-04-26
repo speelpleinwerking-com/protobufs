@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+// Details on upcoming events, programme, etc.
+message Calendar {
+    // Days on which the playground is closed. Key: ISO 8061 date (e.g. "2022-04-26"), value: reason (e.g. "National holiday")
+    map<string, string> closed_on = 1;
+
+    // Programme for the upcoming holiday(s), detailing themes, special activities, ...
+    optional string programme = 2;
+
+    // Dates, holidays and periods the playground will be open next year
+    optional string next_year_dates = 3;
+}

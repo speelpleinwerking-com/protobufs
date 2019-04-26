@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+message Serious {
+
+    // The vision and mission of the playground (as text)
+    optional string mission_vision_text = 1;
+    // The vision and mission of the playground - link to a document (e.g. PDF)
+    optional string mission_vision_url = 2;
+
+    // Legal information of the playground, such as company number, registered office, ...
+    optional string legal_information = 3;
+
+    // Insurance information: what insurance does the playground have, what to do in case of damage
+    optional string insurance_information = 4;
+
+    // The rules of the playground (as text)
+    optional string rules_text = 5;
+    // The rules of the playground - link to a document (e.g. PDF)
+    optional string rules_url = 6;
+}

@@ -1,0 +1,35 @@
+syntax = "proto2";
+
+// Parameters to show a Google Maps representation of an address
+message GoogleMapsParameters  {
+    // Latitude of the location
+    required double lat = 1;
+
+    // Longitude of the location
+    required double lon = 2;
+
+    // Zoom level for Google Maps
+    required int32 zoom = 3;
+}
+
+// Playground location. One playground may have multiple locations if they switch locations.
+message Location {
+    // Description of this address, e.g. "Our main location provides..."
+    required string description = 1;
+
+    optional string street_and_number = 2;
+    optional uint32 zip_code = 3;
+    optional string city = 4;
+
+    // Parameters for a Google Maps representation of this address
+    optional GoogleMapsParameters google_maps_parameters = 5;
+
+    // URL of an image showing the entrance of this playground
+    optional string entrance_image_url = 6;
+
+    // URL of an image showing the floor plan/map of this location
+    optional string floor_plan = 7;
+
+    // Is there (free) (street) parking? Bicycle parking? Public transport? How to find the entrance?
+    optional string how_to_reach = 8;
+}

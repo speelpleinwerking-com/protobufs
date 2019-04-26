@@ -26,4 +26,7 @@ message GeneralInformation {
 
     // What a typical day looks like
     optional string timetable = 8;
+
+    // If the playground is organised by the city or a private organisation
+    optional string organized_by = 9;
 }

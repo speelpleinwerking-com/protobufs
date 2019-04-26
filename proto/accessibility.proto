@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+// Information about accessibility, inclusion and disabilities
+message Accessibility {
+    // Are children with disabilities welcome or not, things you need to know, ...
+    optional string who_welcome = 1;
+
+    // Organisations that the playground partnered with or works together with
+    optional string organisations_we_work_with = 2;
+
+    // Details of who can be contacted with questions about accessibility or inclusion
+    optional string who_to_contact = 3;
+}

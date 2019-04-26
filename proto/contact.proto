@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+// Contact information for a playground
+message Contact {
+    // Postal address people would use if they wanted to send letters or documents
+    // Not necessarily the location of the playground
+    optional string postal_address = 1;
+
+    // Email address of the playground
+    optional string email = 2;
+
+    // Phone number of the playground
+    optional string phone_number = 3;
+
+    // URL of the Facebook page of this playground
+    optional string facebook_url = 4;
+
+    // Instagram handle of the Instagram account of this playground, without leading '@'
+    optional string instagram_handle = 5;
+}

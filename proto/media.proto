@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+message Picture {
+    // Direct URL of the picture
+    required string url = 1;
+
+    // Caption of the picture
+    optional string caption = 2;
+}
+
+message Media {
+    // Where to find pictures as a parent
+    optional string where_to_find_pictures = 1;
+
+    repeated Picture pictures = 2;
+}

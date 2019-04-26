@@ -1,0 +1,30 @@
+syntax = "proto2";
+
+message CrewMember {
+    // The full name of this crew member
+    required string name = 1;
+
+    // Extra information on this crew member, such as duties, ...
+    optional string description = 2;
+
+    // Photo of this crew member
+    optional string photo_url = 3;
+
+    // Email address of this crew member
+    // Warning: public. This is meant for contact people of the playground
+    optional string email_address = 4;
+
+    // Phone number of this crew member
+    // Warning: public. This is meant for contact people of the playground
+    optional string phone_number = 5;
+}
+
+// Information on crew and crew members of a playground
+message Crew {
+    // Crew members of a playground
+    repeated CrewMember members = 1;
+
+    // Information for prospective volunteers. What is a “speelpleinwerking”? Why would I join one? Who can I contact?
+    // How old do I need to be? Do I need a certificate of any kind?
+    optional string for_prospective_volunteers = 2;
+}
