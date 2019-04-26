@@ -1,4 +1,4 @@
-# Protocol buffers
+# Protocol buffers [![Build Status](https://travis-ci.org/speelpleinwerking-com/protobufs.svg?branch=master)](https://travis-ci.org/speelpleinwerking-com/protobufs)
 
 These protocol buffers define the data structures for speelpleinwerking.com. They are compiled to JS and TS with protobuf.js.
 
