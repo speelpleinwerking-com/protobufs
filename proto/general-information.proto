@@ -1,0 +1,29 @@
+syntax = "proto2";
+
+import "pricing.proto";
+
+message GeneralInformation {
+    // Pricing information
+    required Pricing pricing = 1;
+
+    // Are there age groups? If yes, why, how are they divided, is it possible to skip ahead so my child can be with her friends?
+    optional string age_groups = 2;
+
+    // Is there a minimum age, maximum age? Any other organisations you can suggests for older children?
+    optional string age_limits = 3;
+
+    // Is there a separate group for teenagers? What's the vision on teenagers on the playground?
+    optional string teenagers = 4;
+
+    // Is there an "open aanbod" or "gesloten aanbod"? How does it work?
+    optional string open_or_closed = 5;
+
+    // Is there a limit on the number of children? If yes, where can I see how many places are left?
+    optional string limit = 6;
+
+    // Do I have to register my children beforehand? Is there anything special about the first time my children come?
+    optional string first_time = 7;
+
+    // What a typical day looks like
+    optional string timetable = 8;
+}

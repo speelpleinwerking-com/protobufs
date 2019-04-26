@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+message Pricing {
+    // Information on how much you need to per per day
+    optional string price_per_day = 1;
+
+    // Information on extra costs, such as "You need to pay 5 euro the first time you come"
+    optional string extra_costs = 2;
+
+    // Possible discounts, such as "50% of for the second child"
+    optional string possible_discounts = 3;
+
+    // Where can parents find information when they have difficulty paying? E.g. "Sociaal huis"
+    optional string help_with_paying_information = 4;
+
+
+    // Information on how parents can request a fiscal certificate
+    optional string how_to_request_fiscal_certificate = 5;
+
+    // Information on how parents can request a health insurance certificate
+    optional string how_to_request_health_insurance_certificate = 6;
+}
