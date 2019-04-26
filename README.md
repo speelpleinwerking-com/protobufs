@@ -18,5 +18,5 @@ npm test
 
 ## Docs
 
-Latest built from `master` are available [here](https://speelpleinwerking-com.github.io/protobufs/).
+Latest docs built from `master` are available [here](https://speelpleinwerking-com.github.io/protobufs/).
 
