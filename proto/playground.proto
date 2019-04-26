@@ -15,7 +15,7 @@ message Playground {
     required GeneralInformation general_information = 2;
     required Calendar calendar = 3;
     required Accessibility accessibility = 4;
-    required Location location = 5;
+    repeated Location location = 5;
     required OrganisationalFoundation organisational_foundation = 6;
     required Crew crew = 7;
     required Media media = 8;
