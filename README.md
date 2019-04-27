@@ -19,6 +19,20 @@ Playground.verify({}); // 'canonicalName: string expected'
 
 See [here](https://github.com/protobufjs/protobuf.js#toolset) for available methods on the types.
 
+#### Only using interfaces
+
+It's possible to only use the interfaces for project that don't require object validation (e.g. front end where you trust the responses you receive from the server). This way, your bundles stay small (interfaces are not included in the compiled code, they only help the type checker).
+
+```
+npm install --save-dev @speelpleinwerking.com/protobufs
+```
+
+```
+import { IPlayground } from '@speelpleinwerking.com/protobufs';
+
+const playground: IPlayground = ...; // Type safety without the overhead
+```
+
 ### JavaScript
 
 ```
