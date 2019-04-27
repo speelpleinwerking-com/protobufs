@@ -5,9 +5,12 @@ message Accessibility {
     // Are children with disabilities welcome or not, things you need to know, ...
     optional string who_welcome = 1;
 
+    // What this organisation does to help children with disabilities and special needs
+    optional string what_we_do = 2;
+
     // Organisations that the playground partnered with or works together with
-    optional string organisations_we_work_with = 2;
+    optional string organisations_we_work_with = 3;
 
     // Details of who can be contacted with questions about accessibility or inclusion
-    optional string who_to_contact = 3;
+    optional string who_to_contact = 4;
 }
